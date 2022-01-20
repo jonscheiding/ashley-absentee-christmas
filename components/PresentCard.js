@@ -2,7 +2,7 @@ import cx from 'classnames';
 
 import useLocalStorage from '../useLocalStorage';
 
-export default function PresentCard({ description, recipient, children }) {
+export default function PresentCard({ description, recipient, children, hideThanksButton = false }) {
   const key = description.replace(/[^A-Za-z0-9]/g, '-').toLowerCase();
 
   const [ isUnwrapped, setIsUnwrapped ] = useLocalStorage(key + '-unwrapped', false);
@@ -37,7 +37,9 @@ export default function PresentCard({ description, recipient, children }) {
                 <h3>{description}</h3>
                 <i>for {recipient}</i>
                 {children}
-                <button className="flat" onClick={closeClicked}>Thanks</button>
+                <button className="flat"
+                  style={{ display: hideThanksButton ? 'none' : 'initial' }}
+                  onClick={closeClicked}>Thanks</button>
               </>
               : <>
                 <i>for {recipient}</i>
@@ -57,7 +59,8 @@ export default function PresentCard({ description, recipient, children }) {
           position: fixed;
           background-color: white;
           width: 100vw;
-          min-height: 100vh;
+          height: 100vh;
+          overflow: scroll;
           background-color: rgba(0, 0, 0, 0.5);
           padding: 1rem;
           z-index: 1;

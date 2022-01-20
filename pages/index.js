@@ -1,13 +1,20 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import useInterval from 'react-useinterval';
 import cx from 'classnames';
 
 import PresentCard from '../components/PresentCard';
-import { useState } from 'react';
+import useLocalStorage from '../useLocalStorage';
 
 export default function Home() {
   const [ headlineIndex, setHeadlineIndex ] = useState(0);
+  const [ isBikeRevealed, setIsBikeRevealed ] = useLocalStorage('bike-revealed', false);
+
   const headlines = [ 'MERRY', 'FUCKING', 'CHRISTMAS', '🎄' ];
+
+  function revealBike() {
+    setIsBikeRevealed(true);
+  }
 
   function incrementHeadlineIndex() {
     if(headlineIndex < headlines.length) {
@@ -91,10 +98,32 @@ export default function Home() {
               If you don't want this, I will legit hang it up in my house.
             </p>
           </PresentCard>
-          <PresentCard description="Bike Lock" recipient="Ashley">
+          <PresentCard description="Bike Lock" recipient="Ashley" hideThanksButton={!isBikeRevealed}>
             <p>
               This is a fairly heavy-duty lock, so hopefully it will keep your next bike from getting stolen.
             </p>
+            { isBikeRevealed
+              ? <>
+                <p>
+                The bike itself is not part of this gift; it's just a bike that we had sitting in our shed with a
+                flat tire and a broken shifter. The gift part is this tally of the number of fucks I literally gave
+                while repairing it.
+                </p>
+                <img src="/images/tallies.png" alt="Tallies" />
+                <p>
+                I confirmed with the bike shop that you <i>can</i> get the bike wet and it will still work.
+                Use it as long as you want until you get a better one.
+                </p>
+              </>
+              : <>
+                <p>
+              At first glance this might seem to be bike-locking the barn door after the horse has escaped,
+              but I figure Chas has given away by now that there's more to this gift than that. If somehow he
+              hasn't, now's the time to ask him.
+                </p>
+                <button className="flat" onClick={revealBike}>He told me</button>
+              </>
+            }
           </PresentCard>
           <PresentCard description="Hot Chocolate Party" recipient="Whoever">
             <p>
@@ -237,6 +266,11 @@ export default function Home() {
           box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
           padding: 0.5rem;
           text-transform: uppercase;
+        }
+
+        img {
+          width: 100%;
+          display: block;
         }
 
         * {
