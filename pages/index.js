@@ -21,7 +21,7 @@ export default function Home() {
         <div className="grid">
           <PresentCard description="Litographs Pride Shirt" recipient="Ashley">
             <p>
-              This shirt is printed with the text of the Obergefell v. Hodges Supreme Court decision. 
+              This shirt is printed with the text of the Obergefell v. Hodges Supreme Court decision.
               It's from a website called <a href="https://litographs.com" target="_blank" rel="noreferrer">Litographs</a> that
               does this with all kinds of text sources.
             </p>
@@ -29,7 +29,7 @@ export default function Home() {
               If it's the wrong size, let me know, I can exchange it.
             </p>
             <p>
-              Full disclosure, I liked it so much when I saw it that I got one for myself too. Sorry for 
+              Full disclosure, I liked it so much when I saw it that I got one for myself too. Sorry for
               twinning.
             </p>
           </PresentCard>
@@ -39,7 +39,7 @@ export default function Home() {
               pieces from the sheet and then snapping them together. Presumably there are some instructions.
             </p>
             <p>
-              I wasn't sure if you'd like doing these, but I thought maybe it would be fun to work on them 
+              I wasn't sure if you'd like doing these, but I thought maybe it would be fun to work on them
               together next time we hang out. Or, if you don't like actually putting them together, I can do
               them for you.
             </p>

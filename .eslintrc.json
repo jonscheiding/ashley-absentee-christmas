@@ -12,6 +12,7 @@
     "array-bracket-spacing": [ "error", "always" ],
     "object-curly-spacing": [ "error", "always" ],
     "space-infix-ops": "error",
+    "no-trailing-spaces": "error",
 
     "react/no-unescaped-entities": "off",
     "@next/next/no-img-element": "off"

@@ -5,9 +5,9 @@ export default function PresentCard({ description, recipient, children }) {
 
   const [ isUnwrapped, setIsUnwrapped ] = useLocalStorage(key + '-unwrapped', false);
   const [ showingDetails, setShowingDetails ] = useLocalStorage(key + '-details', false);
-  
+
   const imgSrc = `/images/${key}-${isUnwrapped ? 'unwrapped' : 'wrapped'}.png`;
-  
+
   function cardClicked() {
     setShowingDetails(true);
   }
@@ -15,14 +15,14 @@ export default function PresentCard({ description, recipient, children }) {
   function unwrapClicked() {
     setIsUnwrapped(true);
   }
-  
+
   function closeClicked() {
     setShowingDetails(false);
   }
-  
+
   return (
     <>
-      <div 
+      <div
         className="modal"
         style={{ display: showingDetails ? 'block' : 'none' }}
         onClick={closeClicked}>
