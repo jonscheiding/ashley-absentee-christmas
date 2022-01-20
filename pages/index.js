@@ -12,6 +12,11 @@ export default function Home() {
 
   const headlines = [ 'MERRY', 'FUCKING', 'CHRISTMAS', '🎄' ];
 
+  function reset() {
+    localStorage.clear();
+    location.reload();
+  }
+
   function revealBike() {
     setIsBikeRevealed(true);
   }
@@ -42,7 +47,11 @@ export default function Home() {
           </div>
         </div>
 
-        <img src="/images/golden-bitch-xmas.png" alt="Golden Bitch Christmas" style={{ width: '50%' }} />
+        <img
+          src="/images/golden-bitch-xmas.png"
+          alt="Golden Bitch Christmas"
+          style={{ width: '50%' }}
+          onClick={reset} />
 
         <p className="description">
           I created this experience to save me the burden of having to present and explain
@@ -71,8 +80,7 @@ export default function Home() {
             </p>
             <p>
               I wasn't sure if you'd like doing these, but I thought maybe it would be fun to work on them
-              together next time we hang out. Or, if you don't like actually putting them together, I can do
-              them for you.
+              together next time we hang out. Or for more entertainment, you can make Chas do it.
             </p>
           </PresentCard>
           <PresentCard description="Beat BG Button" recipient="Chas">

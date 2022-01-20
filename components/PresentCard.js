@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import cx from 'classnames';
 
 import useLocalStorage from '../useLocalStorage';
@@ -30,7 +31,7 @@ export default function PresentCard({ description, recipient, children, hideThan
         <div className="card" style={{ position: 'relative' }} onClick={(e) => {
           e.stopPropagation();
         }}>
-          <img src={imgSrc} alt="Present" />
+          <Image src={imgSrc} alt="Present" width="400px" height="400px" layout="intrinsic" />
           {
             isUnwrapped
               ? <>
@@ -50,7 +51,7 @@ export default function PresentCard({ description, recipient, children, hideThan
         </div>
       </div>
       <button className="card" onClick={cardClicked} style={{ position: 'relative' }}>
-        <img src={imgSrc} alt="Present" />
+        <Image src={imgSrc} alt="Present" width="400px" height="400px" layout="intrinsic" />
       </button>
       <style jsx>{`
         .modal {
