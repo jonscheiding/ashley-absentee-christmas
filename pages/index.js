@@ -50,7 +50,7 @@ export default function Home() {
               so I made one. Way to show your school spirit.
             </p>
           </PresentCard>
-          <PresentCard description="San Pellegrino Chocolate Coffee" recipient="Grace">
+          <PresentCard description="Chocolate Coffee Fizzies" recipient="Grace">
             <p>
               "There's something so human about taking something great and ruining it a little so you can
               have more of it." I know you love chocolate and coffee, so I couldn't resist giving you some
@@ -60,7 +60,7 @@ export default function Home() {
               Actually I really like these, but if you don't, well that's what makes it a joke gift.
             </p>
           </PresentCard>
-          <PresentCard description="Odegra Poster" recipient="Ashley">
+          <PresentCard description="ENG-100" recipient="Ashley">
             <p>
               This isn't really a present; I had it hanging up in the room you'd have been in when you
               were going to come visit. But now I have to bring the trolling to you.

@@ -4,10 +4,9 @@ export default function PresentCard({ description, recipient, children }) {
   const [ isUnwrapped, setIsUnwrapped ] = useState(false);
   const [ showingDetails, setShowingDetails ] = useState(false);
   
-  // const key = description.replace(/[^A-Za-z0-9]/g, '-').toLowerCase();
-  // const imgSrc = `/images/${key}-${isUnwrapped ? 'unwrapped' : 'wrapped'}.jpg`;
-  const imgSrc = `/images/${isUnwrapped ? 'unwrapped' : 'wrapped'}.jpg`;
-
+  const key = description.replace(/[^A-Za-z0-9]/g, '-').toLowerCase();
+  const imgSrc = `/images/${key}-${isUnwrapped ? 'unwrapped' : 'wrapped'}.png`;
+  
   function cardClicked() {
     setShowingDetails(true);
   }
