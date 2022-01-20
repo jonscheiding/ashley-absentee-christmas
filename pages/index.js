@@ -42,6 +42,8 @@ export default function Home() {
           </div>
         </div>
 
+        <img src="/images/golden-bitch-xmas.png" alt="Golden Bitch Christmas" style={{ width: '50%' }} />
+
         <p className="description">
           I created this experience to save me the burden of having to present and explain
           your Christmas gifts in person. Click/tap on the gift you want to unwrap.
@@ -145,6 +147,9 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+
+          max-width: 800px;
+          margin: auto;
         }
 
         @keyframes fadeout {
@@ -235,8 +240,6 @@ export default function Home() {
           align-items: center;
           justify-content: center;
           flex-wrap: wrap;
-
-          max-width: 800px;
         }
 
         @media (max-width: 600px) {
@@ -259,6 +262,7 @@ export default function Home() {
 
         button { 
           background: none;
+          cursor: pointer;
         }
 
         button.flat {
