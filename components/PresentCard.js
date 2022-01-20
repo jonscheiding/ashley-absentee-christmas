@@ -1,50 +1,53 @@
-import { useState } from "react";
+import { useState } from 'react';
+import Image from 'next/image';
 
-export default function PresentCard({description, recipient, children}) {
-  const [isUnwrapped, setIsUnwrapped] = useState(false);
-  const [showingDetails, setShowingDetails] = useState(false);
+export default function PresentCard({ description, recipient, children }) {
+  const [ isUnwrapped, setIsUnwrapped ] = useState(false);
+  const [ showingDetails, setShowingDetails ] = useState(false);
   
-  const key = description.replace(/[^A-Za-z0-9]/g, '-').toLowerCase()
-  const imgSrc = `/images/${key}-${isUnwrapped ? 'unwrapped' : 'wrapped'}.jpg`
+  const key = description.replace(/[^A-Za-z0-9]/g, '-').toLowerCase();
+  const imgSrc = `/images/${key}-${isUnwrapped ? 'unwrapped' : 'wrapped'}.jpg`;
 
   function cardClicked() {
     setShowingDetails(true);
   }
 
   function unwrapClicked() {
-    setIsUnwrapped(true)
+    setIsUnwrapped(true);
   }
   
   function closeClicked() {
-    setShowingDetails(false)
+    setShowingDetails(false);
   }
-
+  
   return (
     <>
       <div 
         className="modal"
-        style={{display: showingDetails ? 'block' : 'none'}}
+        style={{ display: showingDetails ? 'block' : 'none' }}
         onClick={closeClicked}>
-        <div className="card" onClick={(e) => {e.stopPropagation()}}>
-          <img src={imgSrc} />
+        <div className="card" onClick={(e) => {
+          e.stopPropagation();
+        }}>
+          <Image src={imgSrc} alt="Present"/>
           {
             isUnwrapped
               ? <>
-                  <h3>{description}</h3>
-                  <i>for {recipient}</i>
-                  {children}
-                  <button className="flat" onClick={closeClicked}>Thanks</button>
-                </>
+                <h3>{description}</h3>
+                <i>for {recipient}</i>
+                {children}
+                <button className="flat" onClick={closeClicked}>Thanks</button>
+              </>
               : <>
-                  <i>for {recipient}</i>
-                  <h3>Unwrap this present?</h3>
-                  <button className="flat" onClick={unwrapClicked}>I did</button>
-                </>
+                <i>for {recipient}</i>
+                <h3>Unwrap this present?</h3>
+                <button className="flat" onClick={unwrapClicked}>I did</button>
+              </>
           }
         </div>
       </div>
       <button className="card" onClick={cardClicked}>
-        <img src={imgSrc} />
+        <Image src={imgSrc} alt="Present" />
       </button>
       <style jsx>{`
         .modal {
@@ -101,5 +104,5 @@ export default function PresentCard({description, recipient, children}) {
         }      
       `}</style>
     </>
-  )
+  );
 }

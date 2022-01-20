@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import PresentCard from '../components/PresentCard';
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
           <PresentCard description="Litographs Pride Shirt" recipient="Ashley">
             <p>
               This shirt is printed with the text of the Obergefell v. Hodges Supreme Court decision. 
-              It's from a website called <a href="https://litographs.com" target="_blank">Litographs</a> that
+              It's from a website called <a href="https://litographs.com" target="_blank" rel="noreferrer">Litographs</a> that
               does this with all kinds of text sources.
             </p>
             <p>
@@ -163,5 +163,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }

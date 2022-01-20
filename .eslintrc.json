@@ -1,0 +1,18 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "semi": "error",
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "no-var": "error",
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "no-unexpected-multiline": "error",
+    "eqeqeq": ["error", "smart"],
+    "brace-style": "error",
+    "array-bracket-spacing": [ "error", "always" ],
+    "object-curly-spacing": [ "error", "always" ],
+    "space-infix-ops": "error",
+
+    "react/no-unescaped-entities": "off"
+  }
+}
