@@ -1,21 +1,43 @@
 import Head from 'next/head';
+import useInterval from 'react-useinterval';
+import cx from 'classnames';
+
 import PresentCard from '../components/PresentCard';
+import { useState } from 'react';
 
 export default function Home() {
+  const [ headlineIndex, setHeadlineIndex ] = useState(0);
+  const headlines = [ 'MERRY', 'FUCKING', 'CHRISTMAS', '🎄' ];
+
+  function incrementHeadlineIndex() {
+    if(headlineIndex < headlines.length) {
+      setHeadlineIndex(headlineIndex + 1);
+    }
+  }
+
+  useInterval(incrementHeadlineIndex, 1000);
+
   return (
     <div className="container">
       <Head>
-        <title>Christmas</title>
+        <title>Merry Fucking Christmas</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">
-          XMAS
-        </h1>
+        <div className={cx('welcome', { completed: headlineIndex >= headlines.length })}>
+          <div>
+            {
+              headlines.map((text, i) => (
+                <h1 key={i} className={cx('title', { 'show': headlineIndex === i, 'shown': headlineIndex > i })}>{text}</h1>
+              ))
+            }
+          </div>
+        </div>
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          I created this experience to save me the burden of having to present and explain
+          your Christmas gifts in person. Click/tap on the gift you want to unwrap.
         </p>
 
         <div className="grid">
@@ -93,8 +115,58 @@ export default function Home() {
           align-items: center;
         }
 
+        @keyframes fadeout {
+          0% {
+            opacity: 1;
+            top: 0;
+          }
+          100% {
+            opacity: 0;
+            top: 100vh;
+          }
+        }
+
+        @keyframes revealText {
+          from { opacity: 0; transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0); }
+          to   { opacity: 1; transform: translate(0%, 0%) matrix(1, 0, 0, 1, 0, 0); }
+        }
+
+        .welcome {
+          background-color: black;
+          color: white;
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+        }
+
+        .welcome.completed {
+          animation: fadeout 2s cubic-bezier(0.7, 0, 0.7, 1) forwards;
+        }
+
+        .welcome > div {
+          width: 100%;
+        }
+
+        .welcome h1 {
+          margin: 1rem 0;
+          visibility: hidden;
+        }
+
+        .welcome h1.show {
+          visibility: initial;
+          animation: revealText 100ms cubic-bezier(0.7, 0, 0.3, 1) forwards;
+        }
+
+        .welcome h1.shown {
+          visibility: initial;
+        }
+
         main {
-          padding: 5rem 0;
+          padding: 2rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
@@ -107,7 +179,7 @@ export default function Home() {
         }
 
         p {
-          text-align: justify;
+          text-align: center;
         }
 
         .title {
@@ -133,7 +205,6 @@ export default function Home() {
           flex-wrap: wrap;
 
           max-width: 800px;
-          margin-top: 3rem;
         }
 
         @media (max-width: 600px) {

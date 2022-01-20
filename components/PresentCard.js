@@ -1,3 +1,5 @@
+import cx from 'classnames';
+
 import useLocalStorage from '../useLocalStorage';
 
 export default function PresentCard({ description, recipient, children }) {
@@ -23,8 +25,7 @@ export default function PresentCard({ description, recipient, children }) {
   return (
     <>
       <div
-        className="modal"
-        style={{ display: showingDetails ? 'block' : 'none' }}
+        className={cx('modal', { open: showingDetails, closed: !showingDetails })}
         onClick={closeClicked}>
         <div className="card" style={{ position: 'relative' }} onClick={(e) => {
           e.stopPropagation();
@@ -60,18 +61,30 @@ export default function PresentCard({ description, recipient, children }) {
           background-color: rgba(0, 0, 0, 0.5);
           padding: 1rem;
           z-index: 1;
+          display: none;
+        }
+
+        .modal.open {
+          animation: modalswipe 100ms linear forwards;
+          display: block;
         }
 
         .modal .card {
           background-color: white;
           max-width: 480px;
           margin: auto;
+          width: 100%;
         }
 
         .modal i {
           font-size: 1.2rem;
           margin: 0.5rem;
           display: block;
+        }
+
+        @keyframes modalswipe {
+          0%   { opacity: 0; transform: translate(0%, 20%) matrix(1, 0, 0, 1, 0, 0); display: none }
+          100% { opacity: 1; transform: translate(0%, 0%) matrix(1, 0, 0, 1, 0, 0); display: block }
         }
 
         .card {
@@ -85,6 +98,7 @@ export default function PresentCard({ description, recipient, children }) {
           border-radius: 10px;
           transition: color 0.15s ease, border-color 0.15s ease;
           text-align: center;
+          width: 80%;
         }
 
         .card h3 {
