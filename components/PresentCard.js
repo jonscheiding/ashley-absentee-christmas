@@ -78,6 +78,7 @@ export default function PresentCard({ description, recipient, children, hideThan
           max-width: 480px;
           margin: auto;
           width: 100%;
+          margin-bottom: 5rem;
         }
 
         .modal i {
