@@ -158,6 +158,16 @@ export default function Home() {
           background: none;
         }
 
+        button.flat {
+          font-size: 1.2rem;
+          border: none;
+          background-color: #498bfc;
+          color: white;
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          padding: 0.5rem;
+          text-transform: uppercase;
+        }
+
         * {
           box-sizing: border-box;
         }

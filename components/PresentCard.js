@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import Image from 'next/image';
 
 export default function PresentCard({ description, recipient, children }) {
   const [ isUnwrapped, setIsUnwrapped ] = useState(false);
   const [ showingDetails, setShowingDetails ] = useState(false);
   
-  const key = description.replace(/[^A-Za-z0-9]/g, '-').toLowerCase();
-  const imgSrc = `/images/${key}-${isUnwrapped ? 'unwrapped' : 'wrapped'}.jpg`;
+  // const key = description.replace(/[^A-Za-z0-9]/g, '-').toLowerCase();
+  // const imgSrc = `/images/${key}-${isUnwrapped ? 'unwrapped' : 'wrapped'}.jpg`;
+  const imgSrc = `/images/${isUnwrapped ? 'unwrapped' : 'wrapped'}.jpg`;
 
   function cardClicked() {
     setShowingDetails(true);
@@ -26,10 +26,10 @@ export default function PresentCard({ description, recipient, children }) {
         className="modal"
         style={{ display: showingDetails ? 'block' : 'none' }}
         onClick={closeClicked}>
-        <div className="card" onClick={(e) => {
+        <div className="card" style={{ position: 'relative' }} onClick={(e) => {
           e.stopPropagation();
         }}>
-          <Image src={imgSrc} alt="Present"/>
+          <img src={imgSrc} alt="Present" />
           {
             isUnwrapped
               ? <>
@@ -46,8 +46,8 @@ export default function PresentCard({ description, recipient, children }) {
           }
         </div>
       </div>
-      <button className="card" onClick={cardClicked}>
-        <Image src={imgSrc} alt="Present" />
+      <button className="card" onClick={cardClicked} style={{ position: 'relative' }}>
+        <img src={imgSrc} alt="Present" />
       </button>
       <style jsx>{`
         .modal {
@@ -59,6 +59,7 @@ export default function PresentCard({ description, recipient, children }) {
           min-height: 100vh;
           background-color: rgba(0, 0, 0, 0.5);
           padding: 1rem;
+          z-index: 1;
         }
 
         .modal .card {
