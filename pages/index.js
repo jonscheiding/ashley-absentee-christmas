@@ -83,22 +83,6 @@ export default function Home() {
               together next time we hang out. Or for more entertainment, you can make Chas do it.
             </p>
           </PresentCard>
-          <PresentCard description="Beat BG Button" recipient="Chas">
-            <p>
-              I couldn't stand how sad you were that you couldn't find this in the M Den when I was there,
-              so I made one. Way to show your school spirit.
-            </p>
-          </PresentCard>
-          <PresentCard description="Chocolate Coffee Fizzies" recipient="Grace">
-            <p>
-              "There's something so human about taking something great and ruining it a little so you can
-              have more of it." I know you love chocolate and coffee, so I couldn't resist giving you some
-              of these drinks that sort of ruin them both.
-            </p>
-            <p>
-              Actually I really like these, but if you don't, well that's what makes it a joke gift.
-            </p>
-          </PresentCard>
           <PresentCard description="ENG-100" recipient="Ashley">
             <p>
               This isn't really a present; I had it hanging up in the room you'd have been in when you
