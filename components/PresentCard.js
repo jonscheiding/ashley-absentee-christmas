@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import useLocalStorage from '../useLocalStorage';
 
 export default function PresentCard({ description, recipient, children }) {
-  const [ isUnwrapped, setIsUnwrapped ] = useState(false);
-  const [ showingDetails, setShowingDetails ] = useState(false);
-  
   const key = description.replace(/[^A-Za-z0-9]/g, '-').toLowerCase();
+
+  const [ isUnwrapped, setIsUnwrapped ] = useLocalStorage(key + '-unwrapped', false);
+  const [ showingDetails, setShowingDetails ] = useLocalStorage(key + '-details', false);
+  
   const imgSrc = `/images/${key}-${isUnwrapped ? 'unwrapped' : 'wrapped'}.png`;
   
   function cardClicked() {
