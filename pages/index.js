@@ -75,7 +75,7 @@ export default function Home() {
           </PresentCard>
           <PresentCard description="Beat BG Button" recipient="Chas">
             <p>
-              I couldn't stand how sad Chas was that he couldn't find this in the M Den when I was there,
+              I couldn't stand how sad you were that you couldn't find this in the M Den when I was there,
               so I made one. Way to show your school spirit.
             </p>
           </PresentCard>
@@ -103,10 +103,11 @@ export default function Home() {
               This is a fairly heavy-duty lock, so hopefully it will keep your next bike from getting stolen.
             </p>
             { isBikeRevealed
-              ? <>
+              ?
+              <>
                 <p>
                 The bike itself is not part of this gift; it's just a bike that we had sitting in our shed with a
-                flat tire and a broken shifter. The gift part is this tally of the number of fucks I literally gave
+                flat tire and a broken shifter. The gift is this tally of the number of fucks I literally gave
                 while repairing it.
                 </p>
                 <img src="/images/tallies.png" alt="Tallies" />
@@ -115,20 +116,22 @@ export default function Home() {
                 Use it as long as you want until you get a better one.
                 </p>
               </>
-              : <>
+              :
+              <>
                 <p>
-              At first glance this might seem to be bike-locking the barn door after the horse has escaped,
-              but I figure Chas has given away by now that there's more to this gift than that. If somehow he
-              hasn't, now's the time to ask him.
+                At first glance this might seem to be bike-locking the barn door after the horse has escaped,
+                but I figure Chas has given away by now that there's more to this gift than that. If somehow he
+                hasn't, now's the time to ask him.
                 </p>
-                <button className="flat" onClick={revealBike}>He told me</button>
+                <button className="flat" onClick={revealBike}>He told me already</button>
               </>
             }
           </PresentCard>
-          <PresentCard description="Hot Chocolate Party" recipient="Whoever">
+          <PresentCard description="Hot Chocolate Party" recipient="Ashley, or whoever">
             <p>
-              I know you're not that into sweets and maybe Grace or Chas will like this more than you
-              will. But you deserve marshmallows too, and luckily there is Trader Joe's.
+              This is sort of a post-Christmas gift, inspired by a conversation we had when you came to my parents'
+              house. I know you're not that into sweets and maybe Grace or Chas will like this more than you
+              will. But vegetarians deserve marshmallows too, and luckily there is Trader Joe's.
             </p>
           </PresentCard>
         </div>
