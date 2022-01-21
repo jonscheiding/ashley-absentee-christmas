@@ -31,19 +31,17 @@ export default function PresentCard({ description, recipient, children, hideThan
         <div className="card" style={{ position: 'relative' }} onClick={(e) => {
           e.stopPropagation();
         }}>
-          <Image src={imgSrc} alt="Present" width="400px" height="400px" layout="intrinsic" />
+          <img src={imgSrc} alt="Present" />
+          <i>for {recipient}</i>
           {
             isUnwrapped
               ? <>
-                <h3>{description}</h3>
-                <i>for {recipient}</i>
                 {children}
                 <button className="flat"
                   style={{ display: hideThanksButton ? 'none' : 'initial' }}
                   onClick={closeClicked}>Thanks</button>
               </>
               : <>
-                <i>for {recipient}</i>
                 <h3>Unwrap this present?</h3>
                 <button className="flat" onClick={unwrapClicked}>I did</button>
               </>
@@ -51,7 +49,7 @@ export default function PresentCard({ description, recipient, children, hideThan
         </div>
       </div>
       <button className="card" onClick={cardClicked} style={{ position: 'relative' }}>
-        <Image src={imgSrc} alt="Present" width="400px" height="400px" layout="intrinsic" />
+        <img src={imgSrc} alt="Present" />
       </button>
       <style jsx>{`
         .modal {

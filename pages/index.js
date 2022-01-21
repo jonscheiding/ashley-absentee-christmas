@@ -54,47 +54,51 @@ export default function Home() {
           onClick={reset} />
 
         <p className="description">
-          I created this experience to save me the burden of having to present and explain
+          I created this virtual experience to avoid the burden of having to present and explain
           your Christmas gifts in person. Click/tap on the gift you want to unwrap.
         </p>
 
         <div className="grid">
-          <PresentCard description="Litographs Pride Shirt" recipient="Ashley">
+          <PresentCard description="Litographs Shirt" recipient="Ashley">
             <p>
               This shirt is printed with the text of the Obergefell v. Hodges Supreme Court decision.
               It's from a website called <a href="https://litographs.com" target="_blank" rel="noreferrer">Litographs</a> that
               does this with all kinds of text sources.
             </p>
             <p>
-              If it's the wrong size, let me know, I can exchange it.
+              If it's the wrong size, I can exchange it.
             </p>
             <p>
               Full disclosure, I liked it so much when I saw it that I got one for myself too. Sorry for
               twinning.
             </p>
           </PresentCard>
-          <PresentCard description="Metal Space Models" recipient="Ashley">
+          <PresentCard description="Metal Models" recipient="Ashley">
             <p>
-              These are some models made out of metal. You assemble them by just punching out the perforated
-              pieces from the sheet and then snapping them together. Presumably there are some instructions.
+              These are models but not like the stressful kind. You assemble them by just punching out the
+              perforated pieces from the metal sheets, and then snapping them together. Presumably there are
+              some instructions or something.
             </p>
             <p>
               I wasn't sure if you'd like doing these, but I thought maybe it would be fun to work on them
-              together next time we hang out. Or for more entertainment, you can make Chas do it.
+              together. Or for more entertainment, have Chas do it.
             </p>
           </PresentCard>
           <PresentCard description="ENG-100" recipient="Ashley">
             <p>
               This isn't really a present; I had it hanging up in the room you'd have been in when you
-              were going to come visit. But now I have to bring the trolling to you.
+              were going to come visit. But since I wasn't able to troll you that way, I had to settle
+              for wrapping it up like it was going to be something cool.
             </p>
             <p>
-              If you don't want this, I will legit hang it up in my house.
+              If you don't want this, just hold on to it for awhile - I will absolutely hang it up in
+              my house.
             </p>
           </PresentCard>
           <PresentCard description="Bike Lock" recipient="Ashley" hideThanksButton={!isBikeRevealed}>
             <p>
-              This is a fairly heavy-duty lock, so hopefully it will keep your next bike from getting stolen.
+              This is a pretty heavy-duty lock, so if you always lock up next to somebody that's just
+              using a stupid chain, you should be safe.
             </p>
             { isBikeRevealed
               ?
@@ -121,7 +125,7 @@ export default function Home() {
               </>
             }
           </PresentCard>
-          <PresentCard description="Hot Chocolate Party" recipient="Ashley, or whoever">
+          <PresentCard description="Hot Chocolate Party" recipient="Ashley, or not">
             <p>
               This is sort of a post-Christmas gift, inspired by a conversation we had when you came to my parents'
               house. I know you're not that into sweets and maybe Grace or Chas will like this more than you
